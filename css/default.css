@@ -48,8 +48,48 @@ li {
 	cursor: pointer;
 	list-style: none;
 }
+
 .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* ++Mobile Nav Styles */
+
+#mobile-menu-toggle {
+	position: absolute;
+	z-index: 5;
+	font-size: 2rem;
+	color: var(--accent);
+	top: 0;
+	right: 2px;
+	text-shadow: 3px 3px 3px var(--black);
+}
+
+#mobile-menu-toggle:hover {
+	transform: scale(1.01);
+	transition: ease-in 0.5s;
+	cursor: pointer;
+}
+
+.mobile-nav-container {
+	height: 300px;
+	width: 250px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: conic-gradient(
+		var(--bg-color-main),
+		var(--bg-color-main),
+		var(--accent),
+		var(--bg-color-main)
+	);
+	z-index: 4;
+	box-shadow: 2px 2px 5px 2px var(--black);
+	display: none;
+}
+
+.mobile-nav-container > nav {
+	flex-direction: column;
 }

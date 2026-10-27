@@ -5,7 +5,7 @@ header {
 	height: 480px;
 	width: 100%;
 	position: relative;
-	/* outline: var(--olG); */
+	outline: var(--olG);
 	flex-direction: column;
 }
 
@@ -80,4 +80,5 @@ header {
 	font-size: 2rem;
 	font-weight: 600;
 	font-style: italic;
+	text-shadow: 1px 1px 5px var(--accent);
 }

@@ -1,0 +1,14 @@
+header:hover .slogan-text {
+	text-shadow: 1px 1px 1px var(--accent);
+	transition: ease 0.5s;
+}
+
+/* **Flex Holdings */
+
+.flex-active {
+	display: flex;
+}
+
+.flex-inactive {
+	display: none;
+}

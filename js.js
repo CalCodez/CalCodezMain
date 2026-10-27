@@ -16,3 +16,12 @@ const click = 'click';
 const keyup = 'keyup';
 const flexActive = 'flex-active';
 const flexInactive = 'flex-inactive';
+
+//Toggle Mobile Menu
+const menuToggle = getById('mobile-menu-toggle');
+const mobileMenu = getById('mobile-menu');
+menuToggle.addEventListener(click, () => {
+	if (!mobileMenu.classList.contains(flexActive)) {
+		toggleClass(mobileMenu, flexActive);
+	} else toggleClass(mobileMenu, flexActive);
+});
