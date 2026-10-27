@@ -7,6 +7,17 @@
 	--olR: 1px solid red;
 	--olO: 1px solid orange;
 	--olG: 1px solid green;
+
+	/* Project Colors; */
+	--bg-color-main: #1c1c1c;
+	--font-color-main: #c0c8ca;
+	--contrast-light: #d4d8dd;
+	--contrast-dark: #4d4d4f;
+	--accent: #c11b17;
+
+	/* Logo Font */
+	--header-font: 'Agbalumo', sans-serif;
+	--pairing-font: 'Poppins', sans-serif;
 }
 * {
 	box-sizing: border-box;
@@ -28,6 +39,7 @@ body {
 	min-width: 320px;
 	padding: 8px;
 	height: auto;
+	background-color: var(--bg-color-main);
 }
 a,
 button,
