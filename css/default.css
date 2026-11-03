@@ -57,3 +57,66 @@ li {
 	justify-content: center;
 	align-items: center;
 }
+
+/* **Nav Styles */
+nav > a {
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	align-content: center;
+	color: var(--contrast-dark);
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+nav > a:hover {
+	transition: all ease 0.5s;
+	transform: scale(1.1);
+	text-decoration: 2px underline var(--accent);
+}
+
+/* ++Mobile Menu Styles */
+.mobile-menu-toggle {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: var(--contrast-dark);
+	font-size: 25px;
+	text-shadow: 2px 3px 1px var(--black);
+	z-index: 3;
+	cursor: pointer;
+	display: none;
+}
+
+.mobile-menu-toggle:hover {
+	transition: all ease 0.2s;
+	transform: scale(1.08);
+}
+
+.mobile-menu {
+	width: 0;
+	position: absolute;
+	right: 0;
+	top: 4px;
+	transition: width ease-in 0.3s;
+}
+
+.mobile-nav-links {
+	display: none;
+}
+
+.mobile-menu-active {
+	width: 180px;
+	height: 200px;
+	position: absolute;
+	border: 2px solid black;
+	flex-direction: column;
+	transition: width ease-in 0.3s;
+	background: linear-gradient(20deg, var(--accent2), rgba(0, 0, 0, 0.9), var(--accent2));
+}
+
+.mobile-menu-active > a {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}

@@ -41,3 +41,27 @@ codingIcon.forEach((icon) => {
 		textContent(codingLabel, '');
 	});
 });
+
+//++Mobile Menu
+
+const mobileMenuToggle = getById('mobile-menu-toggle');
+const mobileMenu = getById('mobile-menu');
+const activeMenu = 'mobile-menu-active';
+const mobileNavLinks = selectAll('.mobile-nav-links');
+
+mobileMenuToggle.addEventListener(click, () => {
+	if (!mobileMenu.classList.contains(activeMenu)) {
+		toggleClass(mobileMenu, activeMenu);
+		for (let links of mobileNavLinks) {
+			setTimeout(() => {
+				toggleClass(links, flexActive);
+				console.log(links);
+			}, 200);
+		}
+	} else if (mobileMenu.classList.contains(activeMenu)) {
+		toggleClass(mobileMenu, activeMenu);
+		for (let links of mobileNavLinks) {
+			toggleClass(links, flexActive);
+		}
+	}
+});

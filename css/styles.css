@@ -3,10 +3,10 @@
 	height: auto;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	/* outline: var(--ol); */
 	border: 3px solid var(--black);
 	box-shadow: 2px 2px 5px 5px var(--black);
 	background: linear-gradient(5deg, var(--accent2), var(--black), var(--accent));
+	position: relative;
 }
 
 /* **profile slogan styles */
@@ -101,23 +101,4 @@
 	width: 300px;
 	text-align: center;
 	height: 25px;
-}
-.nav-container > a {
-	width: 80px;
-	height: 40px;
-	text-align: center;
-	align-content: center;
-	/* border-radius: 8px; */
-	/* background: linear-gradient(20deg, var(--accent), var(--black), var(--accent)); */
-	color: var(--contrast-dark);
-	font-size: 1.2rem;
-	font-weight: 600;
-	/* border: 2px solid var(--contrast-dark); */
-	/* box-shadow: 2px 2px 2px 2px var(--black); */
-}
-
-.nav-container > a:hover {
-	transition: all ease 0.5s;
-	transform: scale(1.1);
-	text-decoration: 2px underline var(--accent);
 }
