@@ -15,8 +15,11 @@
 	--contrast-dark: #4d4d4f;
 	--accent: #c11b17;
 
+	/* Project Color RGBA */
+	--accent2: rgba(193, 27, 23, 0.8);
+
 	/* Logo Font */
-	--header-font: 'Agbalumo', sans-serif;
+	--header-font: 'Tourney', sans-serif;
 	--pairing-font: 'Poppins', sans-serif;
 }
 * {
