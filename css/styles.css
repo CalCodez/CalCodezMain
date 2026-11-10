@@ -90,7 +90,7 @@
 	font-family: var(--header-font);
 	text-shadow: 1px 10px 2px var(--black);
 	/* outline: var(--ol); */
-	width: fit-content
+	width: fit-content;
 	margin-bottom: 10px;
 	height: 80px;
 	transition: all ease-out 0.2s;
