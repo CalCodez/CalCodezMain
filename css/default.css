@@ -77,6 +77,15 @@ nav > a:hover {
 	transform: scale(1.1);
 }
 
+#cta-btn {
+	color: var(--black);
+	background-color: var(--accent2);
+	border-radius: 5px;
+	text-shadow: 1px 1px 0.5px var(--black);
+	font-size: 1rem;
+	width: 82px;
+}
+
 /* ++Mobile Menu Styles */
 .mobile-menu-toggle {
 	position: absolute;
