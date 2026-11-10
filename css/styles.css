@@ -36,7 +36,7 @@
 .slogan-container {
 	height: 40px;
 	width: 300px;
-	color: var(--contrast-dark);
+	color: var(--accent);
 	font-size: 2rem;
 	text-shadow: 2px 3px 2px var(--black);
 }
@@ -53,7 +53,6 @@
 .logo-container {
 	width: 100%;
 	height: 280px;
-	outline: var(--ol);
 	flex-direction: column;
 	justify-content: space-evenly;
 }
@@ -62,9 +61,8 @@
 	text-align: center;
 	font-size: 5rem;
 	color: var(--contrast-dark);
-	text-shadow: 1px 10px 2px var(--black);
+	text-shadow: 1px 5px 2px var(--black);
 	font-family: var(--header-font);
-	/* outline: var(--ol); */
 }
 
 .nav-container {
@@ -78,10 +76,10 @@
 .skills-section {
 	width: 100%;
 	height: 300px;
-	/* outline: var(--ol); */
 	flex-direction: column;
 	justify-content: space-evenly;
 	box-shadow: 2px 2px 5px 5px var(--black);
+	margin-bottom: 60px;
 }
 
 .skills-header {
@@ -89,7 +87,6 @@
 	color: var(--contrast-dark);
 	font-family: var(--header-font);
 	text-shadow: 1px 10px 2px var(--black);
-	/* outline: var(--ol); */
 	width: fit-content;
 	margin-bottom: 10px;
 	height: 80px;
@@ -123,4 +120,87 @@
 	cursor: pointer;
 	text-shadow: 2px 6px 2px var(--black);
 	box-shadow: 2px 2px 10px 8px var(--black);
+}
+
+/* !!Projects Section */
+.project-section {
+	height: auto;
+	flex-wrap: wrap;
+	box-shadow: 2px 2px 5px 5px var(--black);
+	flex-direction: column;
+}
+
+.project-header {
+	font-size: 3rem;
+	color: var(--contrast-dark);
+	font-family: var(--header-font);
+	text-shadow: 1px 10px 2px var(--black);
+	width: 100%;
+	margin-bottom: 10px;
+	height: 80px;
+	padding-left: 5px;
+	transition: all ease-out 0.2s;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+	background: linear-gradient(to right, var(--black), var(--contrast-dark), var(--black));
+}
+
+.project-cards-container {
+	height: auto;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+	gap: 20px;
+}
+
+.project-card {
+	flex-direction: column;
+	height: 340px;
+	width: 270px;
+	justify-content: space-around;
+	border: 2px solid var(--black);
+	background: linear-gradient(20deg, var(--black), var(--contrast-dark), var(--black));
+	box-shadow:
+		2px 3px 3px 1px var(--black),
+		2px 4px 3px 0.5px var(--accent);
+}
+
+.project-card > .card-img-container {
+	width: 70%;
+	height: 150px;
+	border: 5px solid var(--black);
+}
+
+.project-card > .card-img-container > img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.project-card > .project-name {
+	width: 80%;
+	height: 30px;
+	text-align: center;
+	align-content: center;
+	box-shadow: 0.5px 0.5px 1px 1px var(--black);
+	border-radius: 2px;
+	color: var(--accent);
+	text-shadow: 2px 4px 2px var(--black);
+	letter-spacing: 1.5px;
+}
+.project-card > .card-btn-container {
+	width: 100%;
+	height: 50px;
+	justify-content: space-evenly;
+}
+
+.project-card > .card-btn-container > a {
+	width: 110px;
+	height: 40px;
+	border-radius: 5px;
+	align-content: center;
+	text-align: center;
+	color: var(--accent);
+	border: 2px solid var(--black);
+	background: linear-gradient(20deg, var(--contrast-dark), var(--black), var(--contrast-dark));
 }

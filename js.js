@@ -65,3 +65,66 @@ mobileMenuToggle.addEventListener(click, () => {
 		}
 	}
 });
+
+//**Project Card Section */
+
+//Project Object
+
+const projects = [
+	{ name: 'Astro Zone', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Solar Gallery', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Medical Landing', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'SaaS', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Portfolio One', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+];
+
+projects.forEach((card) => {
+	const projectCardContainer = getById('project-cards-container');
+
+	//Create Project Card
+	const projectCard = createElement('div');
+	addClass(projectCard, 'project-card');
+	addClass(projectCard, 'container');
+	appendChild(projectCardContainer, projectCard);
+
+	//Create project Card Image Container
+	const cardImgContainer = createElement('div');
+	addClass(cardImgContainer, 'card-img-container');
+	appendChild(projectCard, cardImgContainer);
+
+	//Create Project Card Image
+	const projectImg = createElement('img');
+	projectImg.src = card.img;
+	appendChild(cardImgContainer, projectImg);
+
+	//Create Project Name
+	const projectName = createElement('h3');
+	addClass(projectName, 'project-name');
+	textContent(projectName, card.name);
+	appendChild(projectCard, projectName);
+
+	//Crate Project Button Container
+	const projectBtnContainer = createElement('div');
+	addClass(projectBtnContainer, 'card-btn-container');
+	addClass(projectBtnContainer, 'container');
+	appendChild(projectCard, projectBtnContainer);
+
+	//Create Project Card Buttons
+	const projectButtons = Array.of();
+
+	for (let i = 0; i < 2; i++) {
+		projectButtons.push(createElement('a'));
+	}
+	textContent(projectButtons[0], 'Info');
+	textContent(projectButtons[1], 'View');
+
+	projectButtons[0].src = card.info;
+	projectButtons[1].src = card.view;
+
+	for (let btns of projectButtons) {
+		appendChild(projectBtnContainer, btns);
+	}
+});

@@ -43,7 +43,7 @@ body {
 	padding: 8px;
 	height: auto;
 	/* background-color: var(--bg-color-main); */
-	background: linear-gradient(15deg, var(--accent), var(--black), var(--accent));
+	background: linear-gradient(var(--bg-color-main), var(--black), var(--bg-color-main));
 }
 a,
 button,
@@ -65,15 +65,16 @@ nav > a {
 	height: 40px;
 	text-align: center;
 	align-content: center;
-	color: var(--contrast-dark);
+	color: var(--accent);
 	font-size: 1.2rem;
 	font-weight: 600;
+	text-shadow: 2px 2px 2px var(--black);
+	letter-spacing: 2px;
 }
 
 nav > a:hover {
 	transition: all ease 0.5s;
 	transform: scale(1.1);
-	text-decoration: 2px underline var(--accent);
 }
 
 /* ++Mobile Menu Styles */
