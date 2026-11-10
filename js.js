@@ -43,7 +43,6 @@ codingIcon.forEach((icon) => {
 });
 
 //++Mobile Menu
-
 const mobileMenuToggle = getById('mobile-menu-toggle');
 const mobileMenu = getById('mobile-menu');
 const activeMenu = 'mobile-menu-active';
