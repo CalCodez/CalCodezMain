@@ -19,7 +19,7 @@
 	--accent2: rgba(193, 27, 23, 0.8);
 
 	/* Logo Font */
-	--header-font: 'Tourney', sans-serif;
+	--header-font: 'Camelin', sans-serif;
 	--pairing-font: 'Poppins', sans-serif;
 }
 * {
@@ -42,7 +42,8 @@ body {
 	min-width: 320px;
 	padding: 8px;
 	height: auto;
-	background-color: var(--bg-color-main);
+	/* background-color: var(--bg-color-main); */
+	background: linear-gradient(15deg, var(--accent), var(--black), var(--accent));
 }
 a,
 button,

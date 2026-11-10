@@ -29,7 +29,7 @@ const codingIcon = [
 	{ icons: codingIcons[2], name: 'JavaScript', color: '#f7df1e' },
 	{ icons: codingIcons[3], name: 'Github', color: 'var(--contrast-dark)' },
 ];
-const codingLabel = select('.coding-label');
+const codingLabel = getById('coding-label');
 codingIcon.forEach((icon) => {
 	icon.icons.addEventListener('mouseenter', () => {
 		textContent(codingLabel, icon.name);
@@ -38,7 +38,8 @@ codingIcon.forEach((icon) => {
 	});
 
 	icon.icons.addEventListener('mouseleave', () => {
-		textContent(codingLabel, '');
+		textContent(codingLabel, 'Skills');
+		codingLabel.style.color = 'var(--contrast-dark)';
 	});
 });
 

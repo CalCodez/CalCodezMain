@@ -1,24 +1,24 @@
 /* **Coding Label Transitions */
 
 .fa-brands:hover {
-	transition: all ease-in 0.2s;
+	transition: all ease-in 0.5s;
 	transform: scale(1.1);
 	border: 2px solid var(--black);
 }
 
-.fa-html5:hover {
+.fa-html5 {
 	background: linear-gradient(20deg, #e34c26, var(--black), #e34c26);
 }
 
-.fa-css3-alt:hover {
+.fa-css3-alt {
 	background: linear-gradient(20deg, rebeccapurple, var(--black), rebeccapurple);
 }
 
-.fa-js:hover {
+.fa-js {
 	background: linear-gradient(20deg, #f7df1e, var(--black), #f7df1e);
 }
 
-.fa-github:hover {
+.fa-github {
 	background: linear-gradient(20deg, #24292e, var(--black), #24292e);
 }
 

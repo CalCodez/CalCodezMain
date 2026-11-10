@@ -5,6 +5,12 @@
 	.nav-container {
 		display: none;
 	}
+
+	.coding-icons-container .fa-brands {
+		width: 20%;
+		height: 70px;
+		outline: var(--ol);
+	}
 }
 
 @media (max-width: 467px) {
