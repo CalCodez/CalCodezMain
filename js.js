@@ -21,26 +21,42 @@ const flexInactive = 'flex-inactive';
 const logoText = getById('logo-text');
 textContent(logoText, `<CalCodez/>`);
 
-// Coding Icon Label Func
-const codingIcons = selectAll('.fa-brands');
-const codingIcon = [
-	{ icons: codingIcons[0], name: 'HTML', color: '#e34c26' },
-	{ icons: codingIcons[1], name: 'CSS', color: '#663399' },
-	{ icons: codingIcons[2], name: 'JavaScript', color: '#f7df1e' },
-	{ icons: codingIcons[3], name: 'Github', color: 'var(--contrast-dark)' },
+// Generate Coding Badge
+const codingBadge = [
+	{ label: 'HTML', icon: 'fa-html5', color: 'var(--html)', boxShadow: 'var(--htmlBS)' },
+	{ label: 'CSS', icon: 'fa-css', color: 'var(--css)', boxShadow: 'var(--cssBS)' },
+	{ label: 'JS', icon: 'fa-js', color: 'var(--js)', boxShadow: 'var(--jsBS)' },
+	{ label: 'Git Hub', icon: 'fa-github', color: 'var(--gitHub)', boxShadow: 'var(--ghBS)' },
 ];
-const codingLabel = getById('coding-label');
-codingIcon.forEach((icon) => {
-	icon.icons.addEventListener('mouseenter', () => {
-		textContent(codingLabel, icon.name);
-		codingLabel.style.color = icon.color;
-		icon.icons.style.color = icon.color;
-	});
 
-	icon.icons.addEventListener('mouseleave', () => {
-		textContent(codingLabel, 'Skills');
-		codingLabel.style.color = 'var(--contrast-dark)';
-	});
+codingBadge.forEach((badge) => {
+	const codingBadgeContainer = getById('coding-badge-container');
+
+	//Create Coding Badge
+	const codingBadge = createElement('div');
+	addClass(codingBadge, 'coding-badge');
+	addClass(codingBadge, 'container');
+	appendChild(codingBadgeContainer, codingBadge);
+	codingBadge.style.boxShadow = badge.boxShadow;
+
+	//Create icon container
+	const iconContainer = createElement('div');
+	addClass(iconContainer, 'icon-container');
+	appendChild(codingBadge, iconContainer);
+
+	//Generate Coding Icons
+	const codingIcon = createElement('i');
+	addClass(codingIcon, 'fa-brands');
+	addClass(codingIcon, badge.icon);
+	appendChild(iconContainer, codingIcon);
+	codingIcon.style.color = badge.color;
+
+	//Create Coding Badge Label
+	const badgeLabel = createElement('span');
+	addClass(badgeLabel, 'badge-label');
+	textContent(badgeLabel, badge.label);
+	badgeLabel.style.color = badge.color;
+	appendChild(codingBadge, badgeLabel);
 });
 
 //++Mobile Menu

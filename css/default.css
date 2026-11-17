@@ -1,5 +1,7 @@
 :root {
 	--black: #000000;
+	--project-black2: #4d4d4f;
+
 	--white: #ffffff;
 	--ol: 1px solid white;
 	--olB: 1px solid blue;
@@ -9,6 +11,8 @@
 	--olG: 1px solid green;
 
 	/* Project Colors; */
+	--project-black2: #212122;
+
 	--bg-color-main: #1c1c1c;
 	--font-color-main: #c0c8ca;
 	--contrast-light: #d4d8dd;
@@ -17,6 +21,18 @@
 
 	/* Project Color RGBA */
 	--accent2: rgba(193, 27, 23, 0.8);
+
+	/* Coding Skills Colors */
+	--html: #e34c26;
+	--css: #663399;
+	--js: #f7df1e;
+	--gitHub: #464f58;
+
+	/* coding Skills box Shadows */
+	--htmlBS: inset 2px 2px 9px 1px var(--html);
+	--cssBS: inset 2px 2px 9px 1px var(--css);
+	--jsBS: inset 2px 2px 9px 1px var(--js);
+	--ghBS: inset 2px 2px 9px 1px var(--gitHub);
 
 	/* Logo Font */
 	--header-font: 'Camelin', sans-serif;
