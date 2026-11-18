@@ -26,7 +26,7 @@ const codingBadge = [
 	{ label: 'HTML', icon: 'fa-html5', color: 'var(--html)', boxShadow: 'var(--htmlBS)' },
 	{ label: 'CSS', icon: 'fa-css', color: 'var(--css)', boxShadow: 'var(--cssBS)' },
 	{ label: 'JS', icon: 'fa-js', color: 'var(--js)', boxShadow: 'var(--jsBS)' },
-	{ label: 'Git Hub', icon: 'fa-github', color: 'var(--gitHub)', boxShadow: 'var(--ghBS)' },
+	{ label: 'Git Hub', icon: 'fa-github', color: 'var(--github)', boxShadow: 'var(--ghBS)' },
 ];
 
 codingBadge.forEach((badge) => {

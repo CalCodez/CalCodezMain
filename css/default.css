@@ -26,13 +26,13 @@
 	--html: #e34c26;
 	--css: #663399;
 	--js: #f7df1e;
-	--gitHub: #464f58;
+	--github: #464f58;
 
 	/* coding Skills box Shadows */
 	--htmlBS: inset 2px 2px 9px 1px var(--html);
 	--cssBS: inset 2px 2px 9px 1px var(--css);
 	--jsBS: inset 2px 2px 9px 1px var(--js);
-	--ghBS: inset 2px 2px 9px 1px var(--gitHub);
+	--ghBS: inset 2px 2px 9px 1px var(--github);
 
 	/* Logo Font */
 	--header-font: 'Camelin', sans-serif;
