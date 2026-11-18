@@ -23,10 +23,34 @@ textContent(logoText, `<CalCodez/>`);
 
 // Generate Coding Badge
 const codingBadge = [
-	{ label: 'HTML', icon: 'fa-html5', color: 'var(--html)', boxShadow: 'var(--htmlBS)' },
-	{ label: 'CSS', icon: 'fa-css', color: 'var(--css)', boxShadow: 'var(--cssBS)' },
-	{ label: 'JS', icon: 'fa-js', color: 'var(--js)', boxShadow: 'var(--jsBS)' },
-	{ label: 'Git Hub', icon: 'fa-github', color: 'var(--github)', boxShadow: 'var(--ghBS)' },
+	{
+		label: 'HTML',
+		icon: 'fa-html5',
+		color: 'var(--html)',
+		boxShadow: 'var(--htmlBS)',
+		bgGradient: 'var(--htmlGbg)',
+	},
+	{
+		label: 'CSS',
+		icon: 'fa-css',
+		color: 'var(--css)',
+		boxShadow: 'var(--cssBS)',
+		bgGradient: 'var(--cssGbg)',
+	},
+	{
+		label: 'JS',
+		icon: 'fa-js',
+		color: 'var(--js)',
+		boxShadow: 'var(--jsBS)',
+		bgGradient: 'var(--jsGbg)',
+	},
+	{
+		label: 'Git Hub',
+		icon: 'fa-github',
+		color: 'var(--github)',
+		boxShadow: 'var(--ghBS)',
+		bgGradient: 'var(--githubGbg)',
+	},
 ];
 
 codingBadge.forEach((badge) => {
@@ -57,6 +81,16 @@ codingBadge.forEach((badge) => {
 	textContent(badgeLabel, badge.label);
 	badgeLabel.style.color = badge.color;
 	appendChild(codingBadge, badgeLabel);
+
+	codingBadge.addEventListener('mouseover', () => {
+		codingBadgeContainer.style.boxShadow = badge.boxShadow;
+		codingBadgeContainer.style.background = badge.bgGradient;
+	});
+
+	codingBadge.addEventListener('mouseleave', () => {
+		codingBadgeContainer.style.boxShadow = 'var(--black)';
+		codingBadgeContainer.style.background = 'var(--black)';
+	});
 });
 
 //++Mobile Menu

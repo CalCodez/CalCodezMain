@@ -34,6 +34,30 @@
 	--jsBS: inset 2px 2px 9px 1px var(--js);
 	--ghBS: inset 2px 2px 9px 1px var(--github);
 
+	/* Coding skills Hover Gradient Backgrounds */
+	--htmlGbg: linear-gradient(to right, var(--html), var(--black), var(--black), var(--black));
+
+	--cssGbg: linear-gradient(
+		to right,
+		var(--black),
+		var(--black),
+		var(--css),
+		var(--black),
+		var(--black),
+		var(--black)
+	);
+
+	--jsGbg: linear-gradient(
+		to left,
+		var(--black),
+		var(--black),
+		var(--js),
+		var(--black),
+		var(--black),
+		var(--black)
+	);
+
+	--githubGbg: linear-gradient(to left, var(--github), var(--black), var(--black), var(--black));
 	/* Logo Font */
 	--header-font: 'Camelin', sans-serif;
 	--pairing-font: 'Poppins', sans-serif;
