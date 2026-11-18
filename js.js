@@ -121,14 +121,20 @@ mobileMenuToggle.addEventListener(click, () => {
 //Project Object
 
 const projects = [
-	{ name: 'Astro Zone', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Solar Gallery', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Medical Landing', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'SaaS', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Portfolio One', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
-	{ name: 'Portfolio Two', img: './assets/images/CalvinC_One.jpg', info: '#', view: '#' },
+	{ name: 'Astro Zone', img: './assets/projectImages/astroZone.png', info: '#', view: '#' },
+	{ name: 'Solar Gallery', img: './assets/projectImages/solar_gallery.png', info: '#', view: '#' },
+	{
+		name: 'Medical Landing',
+		img: './assets/projectImages/medical_landing.png',
+		info: '#',
+		view: '#',
+	},
+	{ name: 'SaaS', img: './assets/projectImages/SaaS.png', info: '#', view: '#' },
+	{ name: 'Caltube', img: './assets/projectImages/caltube.png', info: '#', view: '#' },
+	{ name: 'Log In Form', img: './assets/projectImages/login_form.png', info: '#', view: '#' },
+	{ name: 'Pokemon', img: './assets/projectImages/Pokemon.png', info: '#', view: '#' },
+	{ name: 'Portfolio One', img: './assets/projectImages/portfolio_one.png', info: '#', view: '#' },
+	{ name: 'Portfolio Two', img: './assets/projectImages/astroZone.png', info: '#', view: '#' },
 ];
 
 projects.forEach((card) => {
