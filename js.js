@@ -22,33 +22,10 @@ const logoText = getById('logo-text');
 textContent(logoText, `<CalCodez/>`);
 
 //Contact Function
-
-const contactCTAbtn = getById('contact-cta-btn').addEventListener(click, () => {
-	//Toggle Open Contact Container
-	const contactContainer = getById('contact-container');
-	if (!contactContainer.classList.contains(flexActive)) {
-		toggleClass(contactContainer, flexActive);
-	}
-
-	//Generate Hover Contact Label
-
-	//Toggle Close Contact Container
-	const contactCloseX = getById('contact-close-x').addEventListener(click, () => {
-		if (contactContainer.classList.contains(flexActive)) {
-			toggleClass(contactContainer, flexActive);
-		}
-	});
-
-	window.addEventListener(keyup, (e) => {
-		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
-			toggleClass(contactContainer, flexActive);
-		}
-	});
-});
-
 const directContactLabel = getById('direct-contact-label');
 const socialContactLabel = getById('social-contact-label');
 const contactLinks = selectAll('.contact-link');
+const contactCloseX = getById('contact-close-x');
 
 const contactLinksObj = [
 	{
@@ -83,21 +60,53 @@ const contactLinksObj = [
 	},
 ];
 
-contactLinksObj.forEach((elm) => {
-	elm.link.addEventListener('mouseover', () => {
-		textContent(elm.contactLabel, elm.contactName);
-		elm.contactLabel.style.color = elm.color;
+function toggleContactContainerClose(arr, container) {
+	for (let toggle of arr) {
+		toggle.addEventListener(click, () => {
+			if (container.classList.contains(flexActive)) {
+				toggleClass(container, flexActive);
+			}
+		});
+	}
+}
+
+function contactHoverLabelUpdate(arr) {
+	arr.forEach((links) => {
+		links.link.addEventListener('mouseover', () => {
+			textContent(links.contactLabel, links.contactName);
+			links.contactLabel.style.color = links.color;
+		});
+
+		links.link.addEventListener('mouseleave', () => {
+			if (links.contactLabel === directContactLabel) {
+				textContent(directContactLabel, 'Contact Me');
+				directContactLabel.style.color = 'var(--accent)';
+			}
+
+			if (links.contactLabel === socialContactLabel) {
+				textContent(socialContactLabel, 'Find Me On');
+				socialContactLabel.style.color = 'var(--accent)';
+			}
+		});
 	});
+}
 
-	elm.link.addEventListener('mouseleave', () => {
-		if (elm.contactLabel === directContactLabel) {
-			textContent(directContactLabel, 'Contact Me');
-			directContactLabel.style.color = 'var(--accent)';
-		}
+const contactCtaBtn = getById('contact-cta-btn').addEventListener(click, () => {
+	//Toggle Open Contact Container
+	const contactContainer = getById('contact-container');
+	if (!contactContainer.classList.contains(flexActive)) {
+		toggleClass(contactContainer, flexActive);
+	}
 
-		if (elm.contactLabel === socialContactLabel) {
-			textContent(socialContactLabel, 'Find Me On');
-			socialContactLabel.style.color = 'var(--accent)';
+	contactHoverLabelUpdate(contactLinksObj);
+
+	//Toggle Close Contact Container
+	const closeContactContainerToggles = Array.of(contactCloseX, contactContainer);
+	toggleContactContainerClose(closeContactContainerToggles, contactContainer);
+
+	window.addEventListener(keyup, (e) => {
+		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
+			toggleClass(contactContainer, flexActive);
 		}
 	});
 });
