@@ -21,6 +21,87 @@ const flexInactive = 'flex-inactive';
 const logoText = getById('logo-text');
 textContent(logoText, `<CalCodez/>`);
 
+//Contact Function
+
+const contactCTAbtn = getById('contact-cta-btn').addEventListener(click, () => {
+	//Toggle Open Contact Container
+	const contactContainer = getById('contact-container');
+	if (!contactContainer.classList.contains(flexActive)) {
+		toggleClass(contactContainer, flexActive);
+	}
+
+	//Generate Hover Contact Label
+
+	//Toggle Close Contact Container
+	const contactCloseX = getById('contact-close-x').addEventListener(click, () => {
+		if (contactContainer.classList.contains(flexActive)) {
+			toggleClass(contactContainer, flexActive);
+		}
+	});
+
+	window.addEventListener(keyup, (e) => {
+		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
+			toggleClass(contactContainer, flexActive);
+		}
+	});
+});
+
+const directContactLabel = getById('direct-contact-label');
+const socialContactLabel = getById('social-contact-label');
+const contactLinks = selectAll('.contact-link');
+
+const contactLinksObj = [
+	{
+		contactName: 'Gmail',
+		link: contactLinks[0],
+		contactLabel: directContactLabel,
+		color: 'var(--accent)',
+	},
+	{
+		contactName: 'WhatsApp',
+		link: contactLinks[1],
+		contactLabel: directContactLabel,
+		color: '#25d366',
+	},
+	{
+		contactName: 'Facebook',
+		link: contactLinks[2],
+		contactLabel: socialContactLabel,
+		color: '#4267b2',
+	},
+	{
+		contactName: 'Instagram',
+		link: contactLinks[3],
+		contactLabel: socialContactLabel,
+		color: '#0095f6',
+	},
+	{
+		contactName: 'Threads',
+		link: contactLinks[4],
+		contactLabel: socialContactLabel,
+		color: 'var(--contrast-light)',
+	},
+];
+
+contactLinksObj.forEach((elm) => {
+	elm.link.addEventListener('mouseover', () => {
+		textContent(elm.contactLabel, elm.contactName);
+		elm.contactLabel.style.color = elm.color;
+	});
+
+	elm.link.addEventListener('mouseleave', () => {
+		if (elm.contactLabel === directContactLabel) {
+			textContent(directContactLabel, 'Contact Me');
+			directContactLabel.style.color = 'var(--accent)';
+		}
+
+		if (elm.contactLabel === socialContactLabel) {
+			textContent(socialContactLabel, 'Find Me On');
+			socialContactLabel.style.color = 'var(--accent)';
+		}
+	});
+});
+
 // Generate Coding Badge
 const codingBadge = [
 	{
