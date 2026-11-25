@@ -1,7 +1,7 @@
 .hero-section {
 	width: 100%;
 	height: auto;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	justify-content: space-around;
 	border: 3px solid var(--black);
 	box-shadow: 2px 2px 5px 5px var(--black);
@@ -49,7 +49,6 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	position: relative;
-	outline: var(--ol);
 }
 
 .logo-container {
@@ -63,7 +62,9 @@
 	text-align: center;
 	font-size: 5rem;
 	color: var(--contrast-dark);
-	text-shadow: 1px 8px 2px var(--black);
+	text-shadow:
+		1px 8px 2px var(--black),
+		3px 5px 4px var(--accent);
 	font-family: var(--header-font);
 }
 
@@ -123,9 +124,10 @@
 .contact-label {
 	color: var(--accent);
 	margin-bottom: 15px;
-	align-self: flex-start;
-	padding: 8px;
+	padding: 10px;
 	margin-left: 3px;
+	width: 100%;
+	text-align: left;
 }
 
 .contact-icons-container,

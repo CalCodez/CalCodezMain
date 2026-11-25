@@ -33,30 +33,35 @@ const contactLinksObj = [
 		link: contactLinks[0],
 		contactLabel: directContactLabel,
 		color: 'var(--accent)',
+		effects: 'var(--googleBS)',
 	},
 	{
 		contactName: 'WhatsApp',
 		link: contactLinks[1],
 		contactLabel: directContactLabel,
-		color: '#25d366',
+		color: 'var(--whatsapp)',
+		effects: 'var(--whatsappBS)',
 	},
 	{
 		contactName: 'Facebook',
 		link: contactLinks[2],
 		contactLabel: socialContactLabel,
-		color: '#4267b2',
+		color: 'var(--facebook)',
+		effects: 'var(--facebookBS)',
 	},
 	{
 		contactName: 'Instagram',
 		link: contactLinks[3],
 		contactLabel: socialContactLabel,
-		color: '#0095f6',
+		color: 'var(--instagram)',
+		effects: 'var(--instagramBS)',
 	},
 	{
 		contactName: 'Threads',
 		link: contactLinks[4],
 		contactLabel: socialContactLabel,
 		color: 'var(--contrast-light)',
+		effects: 'var(--threadsBS)',
 	},
 ];
 
@@ -70,23 +75,27 @@ function toggleContactContainerClose(arr, container) {
 	}
 }
 
-function contactHoverLabelUpdate(arr) {
+function contactHoverLabelUpdate(arr, parentContainer) {
 	arr.forEach((links) => {
 		links.link.addEventListener('mouseover', () => {
 			textContent(links.contactLabel, links.contactName);
 			links.contactLabel.style.color = links.color;
+			parentContainer.style.boxShadow = links.effects;
 		});
 
 		links.link.addEventListener('mouseleave', () => {
 			if (links.contactLabel === directContactLabel) {
 				textContent(directContactLabel, 'Contact Me');
-				directContactLabel.style.color = 'var(--accent)';
 			}
 
 			if (links.contactLabel === socialContactLabel) {
 				textContent(socialContactLabel, 'Find Me On');
 				socialContactLabel.style.color = 'var(--accent)';
 			}
+
+			directContactLabel.style.color = 'var(--accent)';
+			parentContainer.style.border = 'none';
+			parentContainer.style.boxShadow = 'inset 2px 2px 8px var(--accent)';
 		});
 	});
 }
@@ -98,17 +107,18 @@ const contactCtaBtn = getById('contact-cta-btn').addEventListener(click, () => {
 		toggleClass(contactContainer, flexActive);
 	}
 
-	contactHoverLabelUpdate(contactLinksObj);
+	//Contact Icon hover effects function
+	contactHoverLabelUpdate(contactLinksObj, contactContainer);
 
 	//Toggle Close Contact Container
 	const closeContactContainerToggles = Array.of(contactCloseX, contactContainer);
 	toggleContactContainerClose(closeContactContainerToggles, contactContainer);
 
-	contactContainer.addEventListener('mouseleave', () => {
-		if (contactContainer.classList.contains(flexActive)) {
-			toggleClass(contactContainer, flexActive);
-		}
-	});
+	// contactContainer.addEventListener('mouseleave', () => {
+	// 	if (contactContainer.classList.contains(flexActive)) {
+	// 		toggleClass(contactContainer, flexActive);
+	// 	}
+	// });
 
 	window.addEventListener(keyup, (e) => {
 		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
@@ -189,33 +199,8 @@ codingBadge.forEach((badge) => {
 	});
 });
 
-//++Mobile Menu
-const mobileMenuToggle = getById('mobile-menu-toggle');
-const mobileMenu = getById('mobile-menu');
-const activeMenu = 'mobile-menu-active';
-const mobileNavLinks = selectAll('.mobile-nav-links');
-
-mobileMenuToggle.addEventListener(click, () => {
-	if (!mobileMenu.classList.contains(activeMenu)) {
-		toggleClass(mobileMenu, activeMenu);
-		for (let links of mobileNavLinks) {
-			setTimeout(() => {
-				toggleClass(links, flexActive);
-				console.log(links);
-			}, 200);
-		}
-	} else if (mobileMenu.classList.contains(activeMenu)) {
-		toggleClass(mobileMenu, activeMenu);
-		for (let links of mobileNavLinks) {
-			toggleClass(links, flexActive);
-		}
-	}
-});
-
 //**Project Card Section */
-
 //Project Object
-
 const projects = [
 	{ name: 'Astro Zone', img: './assets/projectImages/astroZone.png', info: '#', view: '#' },
 	{ name: 'Solar Gallery', img: './assets/projectImages/solar_gallery.png', info: '#', view: '#' },

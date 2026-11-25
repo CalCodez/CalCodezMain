@@ -5,38 +5,49 @@
 }
 
 .contact-icons-container > a:hover:has(.fa-google) {
-	background: conic-gradient(
-		rgba(52, 168, 83, 0.4),
-		rgba(234, 67, 53, 0.4),
-		rgba(251, 188, 5, 0.4),
-		rgba(66, 133, 244, 0.4)
-	);
-	box-shadow: none;
-	border-top: 2px solid rgb(66, 133, 244);
-	border-left: 2px solid rgb(234, 67, 53);
-	border-bottom: 2px solid rgb(251, 188, 5);
-	border-right: 2px solid rgb(52, 168, 83);
+	box-shadow:
+		inset 0 8px 8px -4px rgb(66, 133, 244),
+		inset -8px 0 8px -4px rgb(234, 67, 53),
+		inset 0 -8px 8px -4px rgb(251, 188, 5),
+		inset 8px 0 8px -4px rgb(52, 168, 83);
+
+	border-color: var(--googleBorderColor);
 }
 
 .contact-icons-container > a:hover:has(.fa-whatsapp) {
-	box-shadow: inset 2px 2px 8px 2px #25d366;
-	color: #25d366;
+	color: var(--whatsapp);
+	box-shadow:
+		inset 0 8px 8px -4px var(--whatsapp),
+		inset -8px 0 8px -4px var(--whatsapp),
+		inset 0 -8px 8px -4px var(--whatsapp),
+		inset 8px 0 8px -4px var(--whatsapp);
 }
 
 .social-icons-container > a:hover:has(.fa-facebook) {
-	box-shadow: inset 2px 2px 8px 2px #4267b2;
 	color: #4267b2;
+	box-shadow:
+		inset 0 8px 8px -4px var(--facebook),
+		inset -8px 0 8px -4px var(--facebook),
+		inset 0 -8px 8px -4px var(--facebook),
+		inset 8px 0 8px -4px var(--facebook);
 }
 
 .social-icons-container > a:hover:has(.fa-instagram) {
-	box-shadow: none;
 	color: #0095f6;
-	background: linear-gradient(360deg, #405de6, #833ab4, #f77737, #fcaf45);
+	box-shadow:
+		inset 0 8px 8px -4px rgb(245, 96, 64),
+		inset -8px 0 8px -4px rgb(193, 53, 132),
+		inset 0 -8px 8px -4px rgb(131, 58, 180),
+		inset 8px 0 8px -4px rgb(252, 175, 69);
 }
 
 .social-icons-container > a:hover:has(.fa-threads) {
-	box-shadow: inset 2px 2px 8px 2px var(--contrast-light);
 	color: var(--contrast-light);
+	box-shadow:
+		inset 0 8px 8px -4px var(--threads),
+		inset -8px 0 8px -4px var(--threads),
+		inset 0 -8px 8px -4px var(--threads),
+		inset 8px 0 8px -4px var(--threads);
 }
 
 /* **Flex Holdings */
