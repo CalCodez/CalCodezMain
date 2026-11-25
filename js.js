@@ -104,6 +104,12 @@ const contactCtaBtn = getById('contact-cta-btn').addEventListener(click, () => {
 	const closeContactContainerToggles = Array.of(contactCloseX, contactContainer);
 	toggleContactContainerClose(closeContactContainerToggles, contactContainer);
 
+	contactContainer.addEventListener('mouseleave', () => {
+		if (contactContainer.classList.contains(flexActive)) {
+			toggleClass(contactContainer, flexActive);
+		}
+	});
+
 	window.addEventListener(keyup, (e) => {
 		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
 			toggleClass(contactContainer, flexActive);

@@ -49,6 +49,7 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	position: relative;
+	outline: var(--ol);
 }
 
 .logo-container {
