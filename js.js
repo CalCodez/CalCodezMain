@@ -17,15 +17,14 @@ const keyup = 'keyup';
 const flexActive = 'flex-active';
 const flexInactive = 'flex-inactive';
 
-//Insert Logo Text
-const logoText = getById('logo-text');
-textContent(logoText, `<CalCodez/>`);
+//Insert Logo Styles
+const logoSymbols = selectAll('.logo-symbols');
+textContent(logoSymbols[0], `<`);
 
 //Contact Function
 const directContactLabel = getById('direct-contact-label');
 const socialContactLabel = getById('social-contact-label');
 const contactLinks = selectAll('.contact-link');
-const contactCloseX = getById('contact-close-x');
 
 const contactLinksObj = [
 	{
@@ -60,21 +59,12 @@ const contactLinksObj = [
 		contactName: 'Threads',
 		link: contactLinks[4],
 		contactLabel: socialContactLabel,
-		color: 'var(--contrast-light)',
+		color: 'var(--threads)',
 		effects: 'var(--threadsBS)',
 	},
 ];
 
-function toggleContactContainerClose(arr, container) {
-	for (let toggle of arr) {
-		toggle.addEventListener(click, () => {
-			if (container.classList.contains(flexActive)) {
-				toggleClass(container, flexActive);
-			}
-		});
-	}
-}
-
+//Contact Icon Hover func
 function contactHoverLabelUpdate(arr, parentContainer) {
 	arr.forEach((links) => {
 		links.link.addEventListener('mouseover', () => {
@@ -95,10 +85,19 @@ function contactHoverLabelUpdate(arr, parentContainer) {
 
 			directContactLabel.style.color = 'var(--accent)';
 			parentContainer.style.border = 'none';
-			parentContainer.style.boxShadow = 'inset 2px 2px 8px var(--accent)';
+			parentContainer.style.boxShadow = 'var(--default-contact-containerBS)';
 		});
 	});
 }
+
+//Mouse Leave Close Contact Container Func
+const mouseLeaveCloseContactContainer = (leaveContainer, closeContainer = 'contact-container') => {
+	leaveContainer.addEventListener('mouseleave', () => {
+		if (closeContainer.classList.contains(flexActive)) {
+			toggleClass(closeContainer, flexActive);
+		}
+	});
+};
 
 const contactCtaBtn = getById('contact-cta-btn').addEventListener(click, () => {
 	//Toggle Open Contact Container
@@ -111,14 +110,16 @@ const contactCtaBtn = getById('contact-cta-btn').addEventListener(click, () => {
 	contactHoverLabelUpdate(contactLinksObj, contactContainer);
 
 	//Toggle Close Contact Container
-	const closeContactContainerToggles = Array.of(contactCloseX, contactContainer);
-	toggleContactContainerClose(closeContactContainerToggles, contactContainer);
+	contactContainer.addEventListener(click, () => {
+		if (contactContainer.classList.contains(flexActive)) {
+			toggleClass(contactContainer, flexActive);
+		}
+	});
 
-	// contactContainer.addEventListener('mouseleave', () => {
-	// 	if (contactContainer.classList.contains(flexActive)) {
-	// 		toggleClass(contactContainer, flexActive);
-	// 	}
-	// });
+	mouseLeaveCloseContactContainer(contactContainer, contactContainer);
+
+	const heroSection = getById('hero-section');
+	mouseLeaveCloseContactContainer(heroSection, contactContainer);
 
 	window.addEventListener(keyup, (e) => {
 		if (e.key == 'Escape' && contactContainer.classList.contains(flexActive)) {
@@ -144,7 +145,7 @@ const codingBadge = [
 		bgGradient: 'var(--cssGbg)',
 	},
 	{
-		label: 'JS',
+		label: 'JavaScript',
 		icon: 'fa-js',
 		color: 'var(--js)',
 		boxShadow: 'var(--jsBS)',
@@ -210,12 +211,6 @@ const projects = [
 		info: '#',
 		view: '#',
 	},
-	{ name: 'SaaS', img: './assets/projectImages/SaaS.png', info: '#', view: '#' },
-	{ name: 'Caltube', img: './assets/projectImages/caltube.png', info: '#', view: '#' },
-	{ name: 'Log In Form', img: './assets/projectImages/login_form.png', info: '#', view: '#' },
-	{ name: 'Pokemon', img: './assets/projectImages/Pokemon.png', info: '#', view: '#' },
-	{ name: 'Portfolio One', img: './assets/projectImages/portfolio_one.png', info: '#', view: '#' },
-	{ name: 'Portfolio Two', img: './assets/projectImages/astroZone.png', info: '#', view: '#' },
 ];
 
 projects.forEach((card) => {

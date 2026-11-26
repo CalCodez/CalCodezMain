@@ -23,6 +23,11 @@
 	--accent2: rgba(193, 27, 23, 0.8);
 
 	/* Contact Colors  */
+
+	--default-contact-containerBS:
+		inset 0 8px 8px -4px var(--accent), inset -8px 0 8px -4px var(--accent),
+		inset 0 -8px 8px -4px var(--accent), inset 8px 0 8px -4px var(--accent);
+
 	--googleBS:
 		inset 0 8px 8px -4px rgb(66, 133, 244), inset -8px 0 8px -4px rgb(234, 67, 53),
 		inset 0 -8px 8px -4px rgb(251, 188, 5), inset 8px 0 8px -4px rgb(52, 168, 83);
@@ -54,10 +59,21 @@
 	--github: #464f58;
 
 	/* coding Skills box Shadows */
-	--htmlBS: inset 2px 2px 9px 1px var(--html);
-	--cssBS: inset 2px 2px 9px 1px var(--css);
-	--jsBS: inset 2px 2px 9px 1px var(--js);
-	--ghBS: inset 2px 2px 9px 1px var(--github);
+	--htmlBS:
+		inset 0 8px 8px -4px var(--html), inset -8px 0 8px -4px var(--html),
+		inset 0 -8px 8px -4px var(--html), inset 8px 0 8px -4px var(--html);
+
+	--cssBS:
+		inset 0 8px 8px -4px var(--css), inset -8px 0 8px -4px var(--css),
+		inset 0 -8px 8px -4px var(--css), inset 8px 0 8px -4px var(--css);
+
+	--jsBS:
+		inset 0 8px 8px -4px var(--js), inset -8px 0 8px -4px var(--js),
+		inset 0 -8px 8px -4px var(--js), inset 8px 0 8px -4px var(--js);
+
+	--ghBS:
+		inset 0 8px 8px -4px var(--github), inset -8px 0 8px -4px var(--github),
+		inset 0 -8px 8px -4px var(--github), inset 8px 0 8px -4px var(--github);
 
 	/* Coding skills Hover Gradient Backgrounds */
 	--htmlGbg: linear-gradient(to right, var(--html), var(--black), var(--black), var(--black));
@@ -108,7 +124,6 @@ body {
 	min-width: 320px;
 	padding: 8px;
 	height: auto;
-	/* background-color: var(--bg-color-main); */
 	background: linear-gradient(var(--bg-color-main), var(--black), var(--bg-color-main));
 }
 a,

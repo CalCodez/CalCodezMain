@@ -1,6 +1,6 @@
 /* !!Contact Hover Transition */
 .contact-container a:hover {
-	transition: all ease-in 0.2s;
+	transition: all ease-in 0.3s;
 	transform: scale(1.2);
 }
 
